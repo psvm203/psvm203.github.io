@@ -1,26 +1,24 @@
 # mdBook으로 블로그 만들기 1
 
-mdBook으로 블로그를 만들고, Github Pages에 블로그를 호스팅하는 과정에 대해 알아보자.
+mdBook으로 블로그를 만들고, Github Pages에 호스팅하는 방법에 대해 알아보자.
 
 ## mdBook이란?
 
-[https://github.com/rust-lang/mdBook](https://github.com/rust-lang/mdBook)
+[mdBook](https://github.com/rust-lang/mdBook)은 마크다운 파일을 기반으로 웹 페이지를 생성하는 오픈소스 프로그램이다.
 
-마크다운 파일 기반으로 웹 페이지를 생성하는 오픈소스 프로그램이다.
-
-[Gitbook](https://www.gitbook.com)과 유사하나 Rust로 구현되어 빠르고 안전하다는 장점이 있다.
+[Gitbook](https://www.gitbook.com)과 유사하나 Rust로 개발되어 속도와 안정성 면에서 장점이 있다.
 
 ## 리포지토리 생성
 
 ![](images/mdBook으로-블로그-만들기-1/github.png)
 
-먼저 깃허브에 ***{사용자 이름}*.github.io** 라는 이름으로 리포지토리를 생성한다.
+먼저, 깃허브에 ***{사용자 이름}*.github.io** 라는 이름으로 리포지토리를 생성한다.
 
 ```sh
 git clone https://github.com/{사용자 이름}/{사용자 이름}.github.io
 ```
 
-그 후, 프로젝트를 저장하고 싶은 위치에 리포지토리를 클론한다.
+그 후, 원하는 위치에 리포지토리를 클론한다.
 
 ## mdBook 설치
 
@@ -30,7 +28,7 @@ git clone https://github.com/{사용자 이름}/{사용자 이름}.github.io
 cargo add mdbook
 ```
 
-명령으로 [crates.io](https://crates.io)에서 mdBook 크레이트를 다운로드 및 빌드할 수 있다.
+위 명령으로 [crates.io](https://crates.io)에서 mdBook 크레이트를 다운로드 및 빌드할 수 있다.
 
 ---
 
@@ -38,13 +36,11 @@ cargo add mdbook
 cargo install --git https://github.com/rust-lang/mdBook.git mdbook
 ```
 
-그런데 crates.io에 배포된 버전은 깃허브 최신 버전보다 낮을 수 있기 때문에, 문자 그대로의 최신 버전을 원한다면 [github](https://github.com/rust-lang/mdBook)에서 다운로드하여 설치할 수 있다.
+그런데 crates.io에 배포된 버전은 깃허브 최신 버전보다 낮을 수 있으므로, 문자 그대로의 최신 버전을 원한다면 [깃허브](https://github.com/rust-lang/mdBook)에서 다운로드하여 설치할 수 있다.
 
 ---
 
-혹은 [미리 컴파일된 바이너리](https://github.com/rust-lang/mdBook/releases)를 다운로드하여 사용하여도 된다.
-
-가장 빠르지만, 직접 **`PATH`**에 추가하여야하는 단점이 있다.
+또는 [미리 컴파일된 바이너리](https://github.com/rust-lang/mdBook/releases)를 다운로드하여 사용하는 방법도 있다. 이 방법은 가장 빠르지만, 직접 `PATH`에 추가해야 하는 단점이 있다.
 
 ## mdBook 생성
 
@@ -52,9 +48,9 @@ cargo install --git https://github.com/rust-lang/mdBook.git mdbook
 mdbook init {사용자 이름}.github.io
 ```
 
-클론한 리포지토리의 폴더의 상위 폴더에서 명령을 실행한다.
+클론한 리포지토리의 상위 폴더에서 위 명령을 실행한다.
 
-Do you want a .gitignore to be created? 라고 물어보는데, 웹 페이지를 빌드한 결과가 들어있는 폴더가 .gitignore에 추가할지 물어보는 옵션이므로 y를 입력한다.
+실행 시 "Do you want a .gitignore to be created?" 라는 질문이 나오는데, 이는 빌드한 결과물이 들어있는 폴더를 .gitignore에 추가할지 물어보는 옵션이므로 y를 입력한다.
 
 ```sh
 cd {사용자 이름}.github.io
@@ -118,7 +114,7 @@ jobs:
 
 ![](images/mdBook으로-블로그-만들기-1/settings.png)
 
-깃허브의 Settings - Pages - Build and deployment - Source를 **Github Actions**로 바꾸어주면 된다.
+그 다음, 깃허브의 Settings > Pages > Build and deployment > Source를 **Github Actions**로 바꾸어주면 된다.
 
 ## 참고 자료
 
