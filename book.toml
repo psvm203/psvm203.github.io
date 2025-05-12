@@ -1,5 +1,14 @@
 [book]
-authors = ["psvm203"]
-language = "en"
-src = "src"
 title = "psvm203"
+authors = ["psvm203"]
+description = "psvm203의 블로그"
+language = "ko"
+
+[output.html]
+smart-punctuation = true
+mathjax-support = true
+no-section-label = true
+git-repository-url = "https://github.com/psvm203/psvm203.github.io"
+
+[output.html.print]
+enable = false
