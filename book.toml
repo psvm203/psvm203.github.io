@@ -4,6 +4,9 @@ authors = ["psvm203"]
 description = "psvm203의 블로그"
 language = "ko"
 
+[rust]
+edition = "2021"
+
 [output.html]
 smart-punctuation = true
 mathjax-support = true
