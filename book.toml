@@ -8,7 +8,6 @@ language = "ko"
 edition = "2021"
 
 [output.html]
-smart-punctuation = true
 mathjax-support = true
 no-section-label = true
 git-repository-url = "https://github.com/psvm203/psvm203.github.io"
