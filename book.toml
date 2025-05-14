@@ -8,8 +8,11 @@ language = "ko"
 edition = "2021"
 
 [output.html]
+default-theme = "latte"
+preferred-dark-theme = "mocha"
 mathjax-support = true
 no-section-label = true
+additional-css = ["./theme/catppuccin.css"]
 git-repository-url = "https://github.com/psvm203/psvm203.github.io"
 
 [output.html.print]
