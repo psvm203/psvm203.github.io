@@ -12,7 +12,7 @@ default-theme = "latte"
 preferred-dark-theme = "mocha"
 mathjax-support = true
 no-section-label = true
-additional-css = ["./theme/catppuccin.css"]
+additional-css = ["./theme/css/catppuccin.css"]
 git-repository-url = "https://github.com/psvm203/psvm203.github.io"
 
 [output.html.print]
