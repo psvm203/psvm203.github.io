@@ -1,1 +1,10 @@
 book
+theme/book.js
+theme/css/chrome.css
+theme/css/general.css
+theme/css/print.css
+theme/css/variables.css
+theme/favicon.png
+theme/favicon.svg
+theme/highlight.css
+theme/highlight.js
