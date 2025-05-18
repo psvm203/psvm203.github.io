@@ -39,7 +39,7 @@ fn main() {
 
     let n: usize = input.trim().parse().unwrap();
 
-    print!("{n}");
+    println!("{n}");
 }
 ```
 
@@ -73,7 +73,7 @@ fn main() {
         .flat_map(|x| x.parse())
         .collect();
 
-    print!("{:?}", nums);
+    println!("{:?}", nums);
 }
 ```
 
@@ -112,7 +112,7 @@ fn main() {
 
     println!("{n}");
     println!("{k}");
-    print!("{:?}", nums);
+    println!("{:?}", nums);
 }
 ```
 
