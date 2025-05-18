@@ -24,6 +24,8 @@ git clone https://github.com/{사용자 이름}/{사용자 이름}.github.io
 
 총 3가지 방법이 있으며, 나는 첫 번째 방법으로 진행했다.
 
+<br>
+
 ```sh
 cargo add mdbook
 ```
@@ -51,6 +53,8 @@ mdbook init {사용자 이름}.github.io
 클론한 리포지토리의 상위 폴더에서 위 명령을 실행한다.
 
 실행 시 "Do you want a .gitignore to be created?" 라는 질문이 나오는데, 이는 빌드한 결과물이 들어있는 폴더를 .gitignore에 추가할지 물어보는 옵션이므로 y를 입력한다.
+
+<br>
 
 ```sh
 cd {사용자 이름}.github.io
@@ -112,14 +116,16 @@ jobs:
 
 위 내용을 복사하여 ***{사용자 이름}*.github.io/.github/workflows/deploy.yml** 으로 저장한 후 푸시한다.
 
+<br>
+
 ![](images/mdBook으로-블로그-만들기-1/settings.png)
 
 그 다음, 깃허브의 Settings > Pages > Build and deployment > Source를 **Github Actions**로 바꾸어주면 된다.
 
 ## 참고 자료
 
-[https://pages.github.com/](https://pages.github.com/)
+[https://pages.github.com](https://pages.github.com)
 
-[https://rust-lang.github.io/mdBook/](https://rust-lang.github.io/mdBook/)
+[https://rust-lang.github.io/mdBook](https://rust-lang.github.io/mdBook)
 
 [https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions](https://github.com/rust-lang/mdBook/wiki/Automated-Deployment%3A-GitHub-Actions)
