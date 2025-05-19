@@ -6,7 +6,7 @@
 
 ```rust,ignore
 fn main() {
-    let input = std::io::read_to_string(std::io::stdin()).unwrap();
+    let stdin = std::io::read_to_string(std::io::stdin()).unwrap();
 }
 ```
 
@@ -18,7 +18,7 @@ fn main() {
 use std::io::*;
 
 fn main() {
-    let input = read_to_string(stdin()).unwrap();
+    let stdin = read_to_string(stdin()).unwrap();
 }
 ```
 
@@ -34,10 +34,10 @@ fn main() {
 use std::io::*;
 
 fn main() {
-    let input = read_to_string(stdin()).unwrap();
-    # let input = "5\n";
+    let stdin = read_to_string(stdin()).unwrap();
+    # let stdin = "5\n";
 
-    let n: usize = input.trim().parse().unwrap();
+    let n: usize = stdin.trim().parse().unwrap();
 
     println!("{n}");
 }
@@ -53,7 +53,7 @@ fn main() {
 
 usize는 인덱스 접근 시에도 편리하다.
 
-만약 음수를 포함한 정수를 파싱한다면 `n`의 타입으로 i32 또는 i128을, 실수를 파싱한다면 f64 타입을 사용한다.
+만약 음수를 포함한 정수를 파싱한다면 `n`의 타입으로 i32 / i64 / i128을, 실수를 파싱한다면 f64 타입을 사용한다.
 
 ### 여러 개의 정수가 입력되는 경우
 
@@ -65,12 +65,12 @@ usize는 인덱스 접근 시에도 편리하다.
 use std::io::*;
 
 fn main() {
-    let input = read_to_string(stdin()).unwrap();
-    # let input = "0 4 2 5 6\n";
+    let stdin = read_to_string(stdin()).unwrap();
+    # let stdin = "0 4 2 5 6\n";
 
-    let nums: Vec<usize> = input
+    let nums: Vec<usize> = stdin
         .split_ascii_whitespace()
-        .flat_map(|x| x.parse())
+        .map(|x| x.parse().unwrap())
         .collect();
 
     println!("{:?}", nums);
@@ -94,16 +94,16 @@ use std::convert::*;
 use std::io::*;
 
 fn main() {
-    let input = read_to_string(stdin()).unwrap();
-    # let input = "10 5\n1 10 4 9 2 3 8 5 7 6";
-    let mut lines = input.lines();
+    let stdin = read_to_string(stdin()).unwrap();
+    # let stdin = "10 5\n1 10 4 9 2 3 8 5 7 6";
+    let mut lines = stdin.lines();
 
     let mut read_ints = || -> Vec<usize> {
         lines
             .next()
             .unwrap()
             .split(' ')
-            .flat_map(|x| x.parse())
+            .map(|x| x.parse().unwrap())
             .collect()
     };
 
@@ -124,26 +124,30 @@ fn main() {
 
 [백준 10989번: 수 정렬하기 3](https://www.acmicpc.net/problem/10989)
 
-메모리 제한이 8MB에 불과하기 때문에 `read_to_string()`을 사용하면 메모리 초과가 뜬다.
-
 > 10<br>5<br>2<br>3<br>1<br>4<br>2<br>3<br>5<br>1<br>7
 
 ```rust,ignore
 use std::io::*;
 
 fn main() {
-    let n: usize = {
-        let mut buffer = String::new();
-        stdin().read_line(&mut buffer).unwrap();
+    let read_int = || -> usize {
+        let mut input = String::new();
+        stdin().read_line(&mut input).unwrap();
 
         input.trim().parse().unwrap()
     };
 
-    for _ in 0..n {
-        let mut buffer = String::new();
-        stdin().read_line(&mut buffer).unwrap();
+    let n = read_int();
 
-        let num: usize = input.trim().parse().unwrap();
+    for _ in 0..n {
+        let num = read_int();
+        todo!();
     }
 }
 ```
+
+메모리 제한이 8MB에 불과하기 때문에 `read_to_string()`을 사용하면 메모리 초과가 뜬다.
+
+`stdin().read_line()`으로 한 줄씩 읽어온다.
+
+또한 메모리를 아끼기 위해 배열에 담지 않고 입력을 받을 때마다 필요한 작업을 수행한다.
