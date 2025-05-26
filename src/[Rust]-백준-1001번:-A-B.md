@@ -1,5 +1,5 @@
 # [Rust] 백준 1001번: A-B
-
+test
 [https://www.acmicpc.net/problem/1001](https://www.acmicpc.net/problem/1001)
 
 ### 문제
