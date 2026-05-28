@@ -1,0 +1,8 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "format"
+name = "format"
+language = "system"
+entry = "dprint fmt --allow-no-files"
