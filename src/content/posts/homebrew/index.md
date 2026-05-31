@@ -25,17 +25,23 @@ draft: false
 brew install wget
 ```
 
+<br />
+
 GUI 프로그램의 경우, `--cask` 옵션을 사용해야 하지만 생략해도 작동한다.
 
 ```shell
 brew install --cask visual-studio-code
 ```
 
+<br />
+
 `brew info`로 설치 없이 정보만 확인할 수도 있다.
 
 ```shell
 brew info visual-studio-code
 ```
+
+<br />
 
 `brew list`로 설치된 프로그램 목록을 확인할 수 있다.
 
@@ -49,8 +55,9 @@ brew list
 
 ```shell
 brew uninstall wget
-brew uninstall visual-studio-code
 ```
+
+<br />
 
 GUI 프로그램의 경우 `--zap` 옵션을 사용하면 프로그램이 남긴 설정 파일, 데이터 같은 잔여 파일까지 삭제하므로 `brew uninstall --zap`으로 삭제하는 걸 추천한다.
 
@@ -75,17 +82,23 @@ brew cleanup
 brew update
 ```
 
+<br />
+
 `brew upgrade`를 하면 `brew`로 설치한 모든 프로그램을 최신 상태로 업그레이드한다.
 
 ```shell
 brew upgrade
 ```
 
+<br />
+
 특정 프로그램만 업그레이드하고 싶으면 프로그램 이름을 붙이면 된다.
 
 ```shell
 brew upgrade visual-studio-code
 ```
+
+<br />
 
 `brew pin`으로 특정 프로그램의 버전을 고정, 즉 업그레이드를 방지할 수 있다. 단, `brew upgrade`만 방지되므로 GUI 프로그램의 자체 업데이트는 가능하다. `brew unpin`으로 해제할 수 있다.
 
