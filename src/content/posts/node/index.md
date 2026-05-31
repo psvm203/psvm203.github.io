@@ -7,11 +7,9 @@ category: 웹
 draft: false
 ---
 
-`Node.js`는 자바스크립트를 브라우저 밖에서 실행할 수 있는 런타임 환경이다.\
-현재 자바스크립트 런타임의 사실상 표준 위치를 차지하고 있다.
+`Node.js`는 자바스크립트를 브라우저 밖에서 실행할 수 있는 런타임 환경이다. 현재 자바스크립트 런타임의 사실상 표준 위치를 차지하고 있다.
 
-`pnpm`은 `Node.js` 생태계에서 사용하는 패키지 매니저다.\
-`npm`과 같은 역할을 하지만, 패키지 설치 속도가 빠르고 디스크 공간을 적게 차지한다.
+`pnpm`은 `Node.js` 생태계에서 사용하는 패키지 매니저다. `npm`과 같은 역할을 하지만, 패키지 설치 속도가 빠르고 디스크 공간을 적게 차지한다.
 
 이 글에서는 `Node.js`와 `pnpm`을 설치하는 법을 정리하려 한다.
 
@@ -19,7 +17,8 @@ draft: false
 
 ### 방법 1: msi 프로그램
 
-방법은 간단하지만 웹페이지에 접속해야 한다는 단점이 있다.\
+방법은 간단하지만 웹페이지에 접속해야하고 설치가 느리다는 단점이 있다.
+
 https://nodejs.org/ko/download 에 들어가 아래처럼 생긴 버튼을 눌러 `Node.js`를 설치한다.
 
 <a href="https://nodejs.org/ko/download" class="w-full min-w-56 sm:w-auto" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#fff;padding:8px 16px;border:1px solid #417e38;border-radius:.25rem;background-color:#417e38;font-weight:500;font-size:14px;text-decoration:none;box-sizing:border-box;box-shadow:0 1px 2px 0 rgba(16,24,40,.05);">Windows 설치 프로그램 (.msi)</a>
@@ -33,7 +32,8 @@ corepack enable pnpm
 
 ### 방법 2: winget
 
-터미널 하나로 모든 설치 작업을 수행할 수 있어 편리하다.\
+터미널 하나로 모든 설치 작업을 수행할 수 있어 편리하다.
+
 아래 명령어로 `Node.js`와 `pnpm`을 설치한다.
 
 ```shell
