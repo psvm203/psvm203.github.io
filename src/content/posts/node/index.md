@@ -44,7 +44,7 @@ corepack enable pnpm
 
 ### 방법 3: fnm
 
-여러 버전의 `Node.js`를 사용해야 할 일이 있을 때 특히 유용하다.
+`fnm`은 `Node.js`의 버전 관리 프로그램으로, `nvm`과 같은 역할을 하지만 더 빠르다. 여러 버전의 `Node.js`를 사용할 일이 있을 때 특히 유용하다.
 
 ```shell
 winget install Schniz.fnm
@@ -67,7 +67,7 @@ corepack enable pnpm
 
 ### 방법 2: fnm
 
-여러 버전의 `Node.js`를 사용해야 할 일이 있을 때 특히 유용하다.
+여러 버전의 `Node.js`를 사용할 일이 있을 때 특히 유용하다.
 
 ```shell
 brew install fnm
