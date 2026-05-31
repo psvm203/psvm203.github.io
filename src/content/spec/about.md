@@ -1,11 +1,5 @@
-# About
+# 소개
 
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+안녕하세요! 성장하는 개발자 이문빈입니다.
 
-::github{repo="saicaca/fuwari"}
-
-> ### Sources of images used in this site
->
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+추후 꾸밀 예정입니다.
