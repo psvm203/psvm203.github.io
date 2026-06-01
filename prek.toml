@@ -6,10 +6,3 @@ id = "format"
 name = "format"
 language = "system"
 entry = "dprint fmt --allow-no-files"
-
-[[repos.hooks]]
-id = "fix-md-links"
-name = "fix md links"
-language = "system"
-entry = "node ./scripts/fix-md-links.js"
-files = "\\.md$"
