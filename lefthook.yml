@@ -2,10 +2,12 @@ pre-commit:
   jobs:
     - name: format
       run: dprint fmt --allow-no-files
+      stage_fixed: true
 
     - name: update-anchor-text
       glob: "**/*.md"
       run: node ./scripts/update-anchor-text.js {staged_files}
+      stage_fixed: true
 
 prepare-commit-msg:
   jobs:
