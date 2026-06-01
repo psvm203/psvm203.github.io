@@ -6,3 +6,10 @@ id = "format"
 name = "format"
 language = "system"
 entry = "dprint fmt --allow-no-files"
+
+[[repos.hooks]]
+id = "fix-md-links"
+name = "fix md links"
+language = "system"
+entry = "./scripts/fix-index-md-links.sh"
+files = "\\.md$"
