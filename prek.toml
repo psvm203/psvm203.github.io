@@ -6,3 +6,10 @@ id = "format"
 name = "format"
 language = "system"
 entry = "dprint fmt --allow-no-files"
+
+[[repos.hooks]]
+id = "update-anchor-text"
+name = "update anchor text"
+language = "system"
+entry = "node ./scripts/update-anchor-text.js"
+files = "\\.md$"
