@@ -169,6 +169,16 @@ const bannerOffset =
       title={profileConfig.name}
       href={`${Astro.site}rss.xml`}
     />
+    <script
+      data-goatcounter="https://psvm203.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+    <script>
+    document.addEventListener("swup:page:view", () => {
+      window.goatcounter?.count({ path: location.pathname });
+    });
+    </script>
   </head>
   <body
     class="min-h-screen transition"
