@@ -30,5 +30,6 @@ yarn.lock
 .idea
 *.iml
 
-.obsidian/
-_scripts
+# obsidian
+**/.obsidian/*
+!**/.obsidian/app.json
