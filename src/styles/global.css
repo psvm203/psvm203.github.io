@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "./main.css";
+@import "./markdown.css";
+@import "./transition.css";
+@import "./scrollbar.css";
+@import "./photoswipe.css";
+@import "./expressive-code.css";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-family-sans:
+    "Roboto",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
