@@ -5,7 +5,9 @@ COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
 
 # Skip for merges, amends, squashes, etc.
-[ -n "$COMMIT_SOURCE" ] && exit 0
+case "$COMMIT_SOURCE" in
+  template|merge|squash|commit) exit 0 ;;
+esac
 
 # Find staged src/content/posts/*/index.md files (A=added, M=modified)
 MATCHING=$(git diff --cached --name-status \
