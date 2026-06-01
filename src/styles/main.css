@@ -82,6 +82,17 @@
     @apply opacity-0 pointer-events-none;
   }
 
+  table-of-contents {
+    display: block;
+    position: relative;
+    isolation: isolate;
+  }
+
+  #toc a.visible .text-50,
+  #toc a.visible .text-30 {
+    @apply text-black/90 dark:text-white/90 font-semibold;
+  }
+
   .hide-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;
