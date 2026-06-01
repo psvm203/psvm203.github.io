@@ -17,7 +17,7 @@ draft: false
 
 ## 프로그램 설치
 
-`brew install (설치할 프로그램)` 을 입력하면 된다. 프로그램 이름은 구글에 `brew wget` 를 검색하면 Homebrew 웹 페이지에 나온다.
+`brew install {프로그램 이름}` 을 입력하면 된다. 프로그램 이름은 구글에 `brew {설치할 프로그램}` 을 검색하면 Homebrew 웹 페이지에 나온다.
 
 ![](images/Pasted%20image%2020260531190725.png)
 
@@ -51,7 +51,7 @@ brew list
 
 ## 프로그램 삭제
 
-`brew uninstall (삭제할 프로그램)` 을 입력하면 된다.
+`brew uninstall {프로그램 이름}` 을 입력하면 된다.
 
 ```shell
 brew uninstall wget
