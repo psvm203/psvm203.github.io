@@ -5,7 +5,6 @@ import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
 import Categories from "./Categories.astro";
 import Profile from "./Profile.astro";
-import Tag from "./Tags.astro";
 import TOC from "./TOC.astro";
 
 interface Props {
@@ -28,7 +27,6 @@ const headings = Astro.props.headings ?? [];
       class="onload-animation"
       style="animation-delay: 150ms"
     ></Categories>
-    <Tag class="onload-animation" style="animation-delay: 200ms"></Tag>
     {siteConfig.toc.enable && (
       <div
         id="toc-wrapper"
