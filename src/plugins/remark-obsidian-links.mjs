@@ -6,14 +6,14 @@ export function remarkObsidianLinks() {
   return (tree) => {
     visit(tree, "link", (node) => {
       const { url } = node;
-      if (!url.startsWith("posts/") || !url.endsWith("/index.md")) return;
+      if (!url.startsWith("../") || !url.endsWith("/index.md")) return;
 
-      const slug = url.slice("posts/".length, -"/index.md".length);
+      const slug = url.slice("../".length, -"/index.md".length);
 
       let title = slug;
       try {
         const content = readFileSync(
-          join(process.cwd(), "src/content", url),
+          join(process.cwd(), "src/content/posts", url.slice("../".length)),
           "utf8",
         );
         const match = content.match(/^title:\s*(.+)$/m);

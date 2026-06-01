@@ -2,11 +2,11 @@ import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const LINK_RE = /\[([^\]]*)\]\((posts\/[^/]+\/index\.md)\)/g;
+const LINK_RE = /\[([^\]]*)\]\((\.\.\/[^/]+\/index\.md)\)/g;
 
 function getTitleFromPost(linkPath) {
   try {
-    const filePath = join(process.cwd(), "src/content", linkPath);
+    const filePath = join(process.cwd(), "src/content/posts", linkPath.slice("../".length));
     const content = readFileSync(filePath, "utf8");
     const match = content.match(/^title:\s*(.+)$/m);
     return match ? match[1].trim() : null;
