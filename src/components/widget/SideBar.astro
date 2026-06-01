@@ -6,6 +6,7 @@ import { i18n } from "../../i18n/translation";
 import { url } from "../../utils/url-utils";
 import Categories from "./Categories.astro";
 import Profile from "./Profile.astro";
+import Tag from "./Tags.astro";
 import TOC from "./TOC.astro";
 
 interface Props {
@@ -33,6 +34,10 @@ const postPathPrefix = url("/posts/");
       class="onload-animation"
       style="animation-delay: 150ms"
     ></Categories>
+    <Tag
+      class:list={["onload-animation", { "hidden": isPostPage }]}
+      style="animation-delay: 200ms"
+    ></Tag>
     {siteConfig.toc.enable && (
       <div
         id="toc-wrapper"
@@ -72,7 +77,10 @@ function updateSidebarVisibility() {
   const profile = document.getElementById("sidebar-profile");
   const tocWrapper = document.getElementById("toc-wrapper");
 
+  const tags = document.querySelector("widget-layout[data-id='tags']");
+
   if (profile) profile.classList.toggle("hidden", isPost);
+  if (tags) tags.classList.toggle("hidden", isPost);
   if (tocWrapper) tocWrapper.classList.toggle("hidden", !isPost);
 }
 
