@@ -1,37 +1,29 @@
-import { readFileSync } from "fs";
-import { basename, dirname, resolve } from "path";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { visit } from "unist-util-visit";
 
-function extractTitle(filePath) {
-  try {
-    const content = readFileSync(filePath, "utf8");
-    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (match) {
-      const titleMatch = match[1].match(/^title:\s*(.+)$/m);
-      if (titleMatch) return titleMatch[1].trim();
-    }
-  } catch {}
-  return null;
-}
-
 export function remarkObsidianLinks() {
-  return (tree, file) => {
-    const dir = dirname(file.path);
-
+  return (tree) => {
     visit(tree, "link", (node) => {
-      if (!node.url.endsWith(".md")) return;
+      const { url } = node;
+      if (!url.startsWith("posts/") || !url.endsWith("/index.md")) return;
 
-      const stem = basename(node.url, ".md");
-      if (
-        node.children.length === 1
-        && node.children[0].type === "text"
-        && node.children[0].value === stem
-      ) {
-        const title = extractTitle(resolve(dir, node.url));
-        if (title) node.children[0].value = title;
+      const slug = url.slice("posts/".length, -"/index.md".length);
+
+      let title = slug;
+      try {
+        const content = readFileSync(
+          join(process.cwd(), "src/content", url),
+          "utf8",
+        );
+        const match = content.match(/^title:\s*(.+)$/m);
+        if (match) title = match[1].trim();
+      } catch {
+        // keep slug as fallback
       }
 
-      node.url = node.url.replace(/\/index\.md$/, "").replace(/\.md$/, "");
+      node.url = slug;
+      node.children = [{ type: "text", value: title }];
     });
   };
 }

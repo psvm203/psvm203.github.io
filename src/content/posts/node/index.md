@@ -57,7 +57,7 @@ corepack enable pnpm
 
 ### 방법 1: Homebrew
 
-`Homebrew` 설치 방법은 [Homebrew 설치하기](../homebrew) 에서 확인할 수 있다.
+`Homebrew` 설치 방법은 [index](posts/homebrew/index.md) 에서 확인할 수 있다.
 
 아래 명령어로 `Node.js`와 `pnpm`을 설치한다.
 
