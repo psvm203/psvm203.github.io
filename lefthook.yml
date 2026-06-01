@@ -1,0 +1,13 @@
+pre-commit:
+  jobs:
+    - name: format
+      run: dprint fmt --allow-no-files
+
+    - name: update-anchor-text
+      glob: "**/*.md"
+      run: node ./scripts/update-anchor-text.js {staged_files}
+
+prepare-commit-msg:
+  jobs:
+    - name: auto-commit-msg
+      run: ./scripts/auto-commit-msg.sh {1} {2}
