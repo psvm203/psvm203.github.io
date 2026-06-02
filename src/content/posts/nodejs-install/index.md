@@ -1,7 +1,7 @@
 ---
 title: Node.js와 pnpm 설치하기
 published: 2026-05-30
-description: 윈도우, 맥, 리눅스에서의 설치법
+description: 윈도우, 맥, 리눅스에서의 Node.js, pnpm 설치법
 tags: []
 category: 웹
 draft: false
@@ -57,7 +57,7 @@ corepack enable pnpm
 
 ### 방법 1: Homebrew
 
-`Homebrew` 설치 방법은 [Homebrew 설치하기](../homebrew/index.md) 에서 확인할 수 있다.
+`Homebrew` 설치 방법은 [맥북 필수 프로그램 Homebrew로 삶의 질 높이기](../homebrew/index.md) 에서 확인할 수 있다.
 
 아래 명령어로 `Node.js`와 `pnpm`을 설치한다.
 
