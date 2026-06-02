@@ -1,46 +1,60 @@
 import { definePlugin } from "@expressive-code/core";
+import type { Element, ElementContent } from "hast";
+
+const HIDDEN_LANGUAGES = new Set(["plaintext", "text", "txt", "ansi", ""]);
+
+function findHeader(node: ElementContent): Element | undefined {
+  if (node.type !== "element") return undefined;
+  const className = node.properties?.className;
+  const classes = Array.isArray(className) ? className : [className];
+  if (node.tagName === "figcaption" && classes.includes("header")) {
+    return node;
+  }
+  for (const child of node.children) {
+    const found = findHeader(child);
+    if (found) return found;
+  }
+  return undefined;
+}
 
 export function pluginLanguageBadge() {
   return definePlugin({
     name: "Language Badge",
-    // @ts-expect-error
+    hooks: {
+      postprocessRenderedBlock: ({ codeBlock, renderData }) => {
+        const language = codeBlock.language?.toLowerCase();
+        if (!language || HIDDEN_LANGUAGES.has(language)) return;
+
+        const header = findHeader(renderData.blockAst);
+        if (!header) return;
+
+        header.children.push({
+          type: "element",
+          tagName: "span",
+          properties: {
+            className: ["language-badge"],
+            "aria-hidden": "true",
+          },
+          children: [{ type: "text", value: language }],
+        });
+      },
+    },
+    // @ts-expect-error - cssVar is untyped in the plugin context
     baseStyles: ({ _cssVar }) => `
-      [data-language]::before {
+      .frame.is-terminal .header .language-badge {
         position: absolute;
-        z-index: 2;
-        right: 0.5rem;
-        top: 0.5rem;
-        padding: 0.1rem 0.5rem;
-        content: attr(data-language);
-        font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.75rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: oklch(0.75 0.1 var(--hue));
-        background: oklch(0.33 0.035 var(--hue));
-        border-radius: 0.5rem;
+        left: 3.6rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
         pointer-events: none;
-        transition: opacity 0.3s;
-        opacity: 0;
-      }
-      .frame:not(.has-title):not(.is-terminal) {
-        @media (hover: none) {
-          & [data-language]::before {
-            opacity: 1;
-            margin-right: 3rem;
-          }
-          & [data-language]:active::before {
-            opacity: 0;
-          }
-        }
-        @media (hover: hover) {
-          & [data-language]::before {
-            opacity: 1;
-          }
-          &:hover [data-language]::before {
-            opacity: 0;
-          }
-        }
+        font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.7rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.08ch;
+        text-transform: uppercase;
+        color: oklch(0.78 0.11 var(--hue));
       }
     `,
   });
