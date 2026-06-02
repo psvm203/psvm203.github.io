@@ -20,7 +20,6 @@ module.exports = async ({ quickAddApi: { inputPrompt }, app }) => {
 title:
 published: ${published}
 description:
-image:
 tags: []
 category:
 ---
