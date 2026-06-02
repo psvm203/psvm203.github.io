@@ -4,7 +4,6 @@ published: 2026-05-30
 description: 윈도우, 맥, 리눅스에서의 Node.js, pnpm 설치법
 tags: []
 category: 웹
-draft: false
 ---
 
 `Node.js`는 자바스크립트를 브라우저 밖에서 실행할 수 있는 런타임 환경이다. 현재 자바스크립트 런타임의 사실상 표준 위치를 차지하고 있다.
