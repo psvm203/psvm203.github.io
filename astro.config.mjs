@@ -67,6 +67,7 @@ export default defineConfig({
       ],
       defaultProps: {
         wrap: true,
+        frame: "terminal",
         overridesByLang: {
           shellsession: {
             showLineNumbers: false,
