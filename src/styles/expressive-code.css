@@ -9,4 +9,18 @@
       "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
       Consolas, "Liberation Mono", "Courier New", monospace;
   }
+
+  .frame.is-terminal .header::before {
+    background-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      #ec6a5e 0 33.333%,
+      #f4bf4f 33.333% 66.666%,
+      #61c554 66.666% 100%
+    );
+    opacity: 1 !important;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
 }
