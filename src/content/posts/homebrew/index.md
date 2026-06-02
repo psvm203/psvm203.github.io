@@ -19,7 +19,7 @@ draft: false
 
 `brew install {프로그램 이름}` 을 입력하면 된다. 프로그램 이름은 구글에 `brew {설치할 프로그램}` 을 검색하면 Homebrew 웹 페이지에 나온다.
 
-![](images/Pasted%20image%2020260531190725.png)
+![](images/formulae.png)
 
 ```shell
 brew install wget
