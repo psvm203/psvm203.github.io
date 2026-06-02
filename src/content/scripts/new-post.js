@@ -2,7 +2,7 @@ const POSTS_PATH = "posts";
 
 module.exports = async ({ quickAddApi: { inputPrompt }, app }) => {
   const slug = await inputPrompt("슬러그 입력");
-  if (!slug || !slug.trim()) return;
+  if (!slug?.trim()) return;
 
   const sanitized = slug.trim().toLowerCase().replace(/\s+/g, "-");
   const filePath = `${POSTS_PATH}/${sanitized}/index.md`;
