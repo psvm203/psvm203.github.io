@@ -38,7 +38,10 @@
     @apply transition rounded-md p-1.5 -m-1.5 relative before:ease-out before:transition active:bg-none hover:before:bg-[var(--btn-plain-bg-hover)] active:before:bg-[var(--btn-plain-bg-active)] z-0 before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
   }
   .float-panel {
-    @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden bg-[var(--float-panel-bg)] transition shadow-xl dark:shadow-none;
+    @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden bg-[var(--float-panel-bg)] transition shadow-xl;
+    :is(.dark *) & {
+      @apply shadow-none;
+    }
   }
   .float-panel-closed {
     @apply -translate-y-1 opacity-0 pointer-events-none;
@@ -52,11 +55,17 @@
       active:bg-[var(--btn-card-bg-active)];
   }
   .btn-card.disabled {
-    @apply pointer-events-none text-black/10 dark:text-white/10;
+    @apply pointer-events-none text-black/10;
+    :is(.dark *) & {
+      @apply text-white/10;
+    }
   }
   .btn-plain {
     @apply transition relative flex items-center justify-center bg-none
-      text-black/75 hover:text-[var(--primary)] dark:text-white/75 dark:hover:text-[var(--primary)];
+      text-black/75 hover:text-[var(--primary)];
+    :is(.dark *) & {
+      @apply text-white/75;
+    }
     &:not(.scale-animation) {
       @apply hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)];
     }
@@ -69,7 +78,10 @@
   }
   .btn-regular {
     @apply transition flex items-center justify-center bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)]
-      text-[var(--btn-content)] dark:text-white/75;
+      text-[var(--btn-content)];
+    :is(.dark *) & {
+      @apply text-white/75;
+    }
   }
 
   .link-underline {
@@ -90,7 +102,10 @@
 
   #toc a.visible .text-50,
   #toc a.visible .text-30 {
-    @apply text-black/90 dark:text-white/90 font-semibold;
+    @apply text-black/90 font-semibold;
+    :is(.dark *) & {
+      @apply text-white/90;
+    }
   }
 
   .hide-scrollbar {
@@ -102,19 +117,34 @@
   }
 
   .text-90 {
-    @apply text-black/90 dark:text-white/90;
+    @apply text-black/90;
+    :is(.dark *) & {
+      @apply text-white/90;
+    }
   }
   .text-75 {
-    @apply text-black/75 dark:text-white/75;
+    @apply text-black/75;
+    :is(.dark *) & {
+      @apply text-white/75;
+    }
   }
   .text-50 {
-    @apply text-black/50 dark:text-white/50;
+    @apply text-black/50;
+    :is(.dark *) & {
+      @apply text-white/50;
+    }
   }
   .text-30 {
-    @apply text-black/30 dark:text-white/30;
+    @apply text-black/30;
+    :is(.dark *) & {
+      @apply text-white/30;
+    }
   }
   .text-25 {
-    @apply text-black/25 dark:text-white/25;
+    @apply text-black/25;
+    :is(.dark *) & {
+      @apply text-white/25;
+    }
   }
 
   .meta-icon {
@@ -128,11 +158,13 @@
 
   .btn-regular-dark {
     @apply flex items-center justify-center
-      bg-[oklch(0.45_0.01_var(--hue))] hover:bg-[oklch(0.50_0.01_var(--hue))] active:bg-[oklch(0.55_0.01_var(--hue))]
-      dark:bg-[oklch(0.30_0.02_var(--hue))] dark:hover:bg-[oklch(0.35_0.03_var(--hue))] dark:active:bg-[oklch(0.40_0.03_var(--hue))];
+      bg-[oklch(0.45_0.01_var(--hue))] hover:bg-[oklch(0.50_0.01_var(--hue))] active:bg-[oklch(0.55_0.01_var(--hue))];
+    :is(.dark *) & {
+      @apply bg-[oklch(0.30_0.02_var(--hue))] hover:bg-[oklch(0.35_0.03_var(--hue))] active:bg-[oklch(0.40_0.03_var(--hue))];
+    }
   }
   .btn-regular-dark.success {
-    @apply bg-[oklch(0.75_0.14_var(--hue))] dark:bg-[oklch(0.75_0.14_var(--hue))];
+    @apply bg-[oklch(0.75_0.14_var(--hue))];
   }
 }
 
