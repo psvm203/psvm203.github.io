@@ -39,7 +39,7 @@ https://www.goatcounter.com 에 들어가 가입한다.
 ></script>
 ```
 
-`{yoursite}` 부분을 수정하고, 이 스크립트를 페이지의 아무 곳에나 추가하면 된다. 나는 `</head>` 직전에 추가했다.
+`{yoursite}` 부분을 수정하고, 이 스크립트를 html의 아무 곳에나 추가하면 된다. 나는 `</head>` 직전에 추가했다.
 
 https://{yoursite}.getcounter.com 에서 대시보드를 확인할 수 있다.
 
