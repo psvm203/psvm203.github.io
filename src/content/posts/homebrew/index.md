@@ -1,11 +1,18 @@
 ---
-title: Homebrew 설치하기
+title: 맥북 필수 프로그램 Homebrew로 삶의 질 높이기
 published: 2026-05-31
-description: 맥북 필수 프로그램
+description: 패키지 관리 프로그램 Homebrew 설치와 사용법
 tags: []
 category: macOS
-draft: false
 ---
+
+## Homebrew란?
+
+Homebrew는 macOS용 서드파티 패키지 관리자로, 터미널에서 프로그램을 설치, 삭제, 업데이트할 수 있다. macOS에는 윈도우의 `winget`이나 리눅스의 `apt` 같은 공식 패키지 관리자가 없어 Homebrew가 그 역할을 대신한다.
+
+웹사이트를 일일이 찾아다니며 `.dmg` 파일을 내려받고, 마운트하고, 옮기고, 언마운트하는 번거로운 과정을 명령어 한 줄로 줄여준다. 또한 `.dmg` 파일로 설치한 프로그램은 하나씩 직접 실행해서 업데이트해야 하지만, Homebrew를 쓰면 설치된 모든 프로그램을 명령어 한 줄로 한 번에 업데이트할 수 있다.
+
+이처럼 Homebrew는 흩어져있는 번거로운 프로그램 관리 작업을 터미널 하나로 깔끔하게 모아준다. 한번 익숙해지면 다시는 `.dmg` 파일을 보고 싶지 않아질 만큼 편리하다. 이제 Homebrew를 설치하는 방법과 사용법을 알아보자.
 
 ## Homebrew 설치 방법
 
