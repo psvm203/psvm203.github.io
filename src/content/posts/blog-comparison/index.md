@@ -2,7 +2,7 @@
 title: 내가 깃허브 블로그로 옮긴 이유
 published: 2026-05-28
 description: 블로그 플랫폼 비교
-tags:
+tags: []
 category: 블로그
 ---
 
