@@ -2,7 +2,7 @@
 title: 깃허브 블로그 방문자 통계 확인하기
 published: 2026-06-02
 description: 구글 애널리틱스를 버리고 GoatCounter를 선택한 이유
-tags:
+tags: []
 category: 블로그
 ---
 
