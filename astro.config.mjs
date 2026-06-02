@@ -31,6 +31,9 @@ export default defineConfig({
   site: "https://psvm203.github.io/",
   base: "/",
   trailingSlash: "never",
+  build: {
+    format: "file",
+  },
   integrations: [
     swup({
       theme: false,
