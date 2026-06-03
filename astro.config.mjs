@@ -23,6 +23,7 @@ import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.m
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
+import { rehypeObsidianImageSize } from "./src/plugins/remark-obsidian-image-size.mjs";
 import { remarkObsidianLinks } from "./src/plugins/remark-obsidian-links.mjs";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
@@ -120,6 +121,7 @@ export default defineConfig({
       ],
       rehypePlugins: [
         rehypeKatex,
+        rehypeObsidianImageSize,
         rehypeSlug,
         [
           rehypeComponents,
