@@ -80,24 +80,8 @@ https://giscus.app/ko 에서 저장소 이름을 입력하면 체크 표시가 �
 
 원하는 테마를 고르고, 생성된 소스 코드를 댓글을 넣고 싶은 위치에 붙여넣으면 댓글 시스템이 적용된다.
 
-<div class="card-base z-10 px-6 md:px-9 py-6 relative w-full mb-4">
-  <script
-    is:inline
-    src="https://giscus.app/client.js"
-    data-repo="psvm203/psvm203.github.io"
-    data-repo-id="R_kgDOSp-vWw"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOSp-vW84C-gFX"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="catppuccin_mocha"
-    data-lang="ko"
-    crossorigin="anonymous"
-    async
-  ></script>
-</div>
+<br />
+
+![](images/comments.png)
 
 위는 Giscus를 적용한 예시이다.
