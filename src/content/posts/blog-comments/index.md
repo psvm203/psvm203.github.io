@@ -1,6 +1,6 @@
 ---
 title: 깃허브 블로그 댓글 시스템 추가하기
-published: 2026-06-03
+published: 2026-06-04
 description: 정적 댓글 시스템 Disqus, utterances, giscus 비교 + giscus 설치법
 tags: []
 category: 블로그
@@ -26,7 +26,7 @@ category: 블로그
 
 ### giscus
 
-giscus는 utterances에서 영감을 받은 댓글 시스템이다. 깃허브 issues 대신 Discussions를 기반으로 작동한다.
+[giscus](https://github.com/giscus/giscus)는 utterances에서 영감을 받은 댓글 시스템이다. 깃허브 Issues 대신 Discussions를 기반으로 작동한다.
 
 Issues는 본래 버그 리포트나 작업 관리를 위한 기능이다. 이를 댓글 용도로 쓰면 레포지토리의 Issues 목록이 댓글로 가득 차 본래 목적을 살리기 어려워진다. 반면 Discussions는 대화를 위한 기능이라 용도에 더 잘 맞으며, 반응이나 중첩 답글처럼 댓글 시스템에 적합한 기능도 제공한다.
 
@@ -56,26 +56,48 @@ https://giscus.app/ko 에서 저장소 이름을 입력하면 체크 표시가 �
 
 블로그 글과 Discussions의 제목을 어떻게 연결할지 설정할 수 있다.
 
-블로그 글의 URL이 https://psvm203.github.io/posts/blog-comments 라면,
+블로그 글의 URL이 https://psvm203.github.io/posts/blog-comments 라면, 각 옵션의 Discussion의 제목은
 
 - 페이지 경로: `posts/blog-comments`
   - http가 https로 바뀌거나 origin이 바뀌어도 인식한다.
   - 가장 추천하는 방식이다.
 
 - 페이지 URL: `https://psvm203.github.io/posts/blog-comments`
-  - http가 https로 바뀌거나 origin이 바뀌면 댓글이 초기화된다.
+  - http가 https로 바뀌거나 origin이 바뀌면 다른 Discussions가 생성된다.
 
 - 페이지 title(og:title): `깃허브 블로그 방문자 통계 확인하기 - psvm203`
-  - 제목이 수정되면 댓글이 초기화되는 문제가 있다.
+  - 제목이 수정되면 다른 Discussions가 생성된다.
 
 ### Discussions 카테고리
 
 ![](images/category.png)
 
-카테고리는 Announcements로 설정한다. 다른 카테고리는 방문자가 Discussions을 생성할 수 있어 오염될 우려가 있다.
+카테고리는 Announcements로 설정한다. 다른 카테고리는 방문자가 Discussions를 생성할 수 있어 오염될 우려가 있다.
 
 ### 적용하기
 
 ![](images/code.png)
 
 원하는 테마를 고르고, 생성된 소스 코드를 댓글을 넣고 싶은 위치에 붙여넣으면 댓글 시스템이 적용된다.
+
+<div class="card-base z-10 px-6 md:px-9 py-6 relative w-full mb-4">
+  <script
+    is:inline
+    src="https://giscus.app/client.js"
+    data-repo="psvm203/psvm203.github.io"
+    data-repo-id="R_kgDOSp-vWw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOSp-vW84C-gFX"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="catppuccin_mocha"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async
+  ></script>
+</div>
+
+위는 Giscus를 적용한 예시이다.
